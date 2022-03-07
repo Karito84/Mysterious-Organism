@@ -60,7 +60,7 @@ const pAequorFactory = (specimenNum, dna) => {
           if(this.dna[i] === 'C' || this.dna[i] === 'G') {
             countCandGBases ++;
           }
-        if ((countCandGBases/15) >= 0.6 ){
+        }if ((countCandGBases/15) >= 0.6 ){
             return true;
         } else {
             return false;
@@ -69,7 +69,7 @@ const pAequorFactory = (specimenNum, dna) => {
     }
 
     }
-}
+
 
     /* create 30 instances to research, that can survive in their natural environment, and store them
     in an aray */
