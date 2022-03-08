@@ -38,7 +38,7 @@ const pAequorFactory = (specimenNum, dna) => {
         }
         return this.dna;
     }, 
-    compareDNA(object2) {
+    compareDNA(object2, showResult =true) {//added showResult to theoriginal method, as I had to use different return for the challenge question
         console.log(this.dna);
         console.log(object2.dna);
         
@@ -52,8 +52,12 @@ const pAequorFactory = (specimenNum, dna) => {
       
         }
         let commonDna = ((count/15) * 100).toFixed(2);
-        return `Specimen ${this.specimenNum} and specimen ${object2.specimenNum} have ${commonDna}% DNA in common.`;
-    },
+          if(showResult) {
+            return `Specimen ${this.specimenNum} and specimen ${object2.specimenNum} have ${commonDna}% DNA in common.`;
+          } else {
+            return commonDna;
+          }
+        },
     willLikelySurvive() {
         let countCandGBases = 0;
         for (let i = 0; i< this.dna.length; i++) {
@@ -101,6 +105,34 @@ const pAequorFactory = (specimenNum, dna) => {
                 number ++;
             }
         } 
+
+// second challenge- Use the .compareDNA() to find the two most related instances of pAequor
+
+    const mostRelatedInstances = array => {
+      
+      let currentHighest = 0;
+      let allTimeHighest = 0;
+      
+      let mostRelated = [];
+        
+        for(let i = 0; i < instancesArray.length; i++){
+          for(let j = i + 1; j < instancesArray.length; j++ ){
+          
+            currentHighest = instancesArray[i].compareDNA(instancesArray[j], false);
+ 
+            if(currentHighest > allTimeHighest){
+              
+              allTimeHighest = currentHighest;
+              mostRelated.pop();
+              mostRelated.pop();
+              mostRelated.push(instancesArray[i],instancesArray[j]);
+            }
+          }
+        } console.log(`specimen #${mostRelated[0].specimenNum} and #${mostRelated[1].specimenNum} have ${allTimeHighest}% DNA in common.`);
+          return mostRelated;
+
+    }
+
 
 console.log(instancesArray)
 console.log(instancesArray[1])
