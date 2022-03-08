@@ -65,10 +65,25 @@ const pAequorFactory = (specimenNum, dna) => {
         } else {
             return false;
         }
-        }
+        
+    },
+    complementStrand() {//this is additional challenge method
+        
+        const complementaryDNAStrand = [];
+        for(let i = 0; i < this.dna.length; i++) {
+          if(this.dna[i] === 'A') {
+            complementaryDNAStrand.push('T');
+          } else if(this.dna[i] === 'T'){
+            complementaryDNAStrand.push('A');
+          } else if(this.dna[i] === 'C'){
+            complementaryDNAStrand.push('G');
+          } else {
+            complementaryDNAStrand.push('C');
+          }
+        } return complementaryDNAStrand;
     }
 
-    }
+}}
 
 
     /* create 30 instances to research, that can survive in their natural environment, and store them
