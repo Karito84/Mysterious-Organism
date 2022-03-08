@@ -39,8 +39,8 @@ const pAequorFactory = (specimenNum, dna) => {
         return this.dna;
     }, 
     compareDNA(object2, showResult =true) {//added showResult to theoriginal method, as I had to use different return for the challenge question
-        console.log(this.dna);
-        console.log(object2.dna);
+        //console.log(this.dna);
+        //console.log(object2.dna);
         
         let count = 0;
         for( let i = 0; i < this.dna.length; i++) {
@@ -133,11 +133,13 @@ const pAequorFactory = (specimenNum, dna) => {
 
     }
 
-
-console.log(instancesArray)
-console.log(instancesArray[1])
-console.log(instancesArray[0].compareDNA(instancesArray[29]))
-console.log(instancesArray[0].willLikelySurvive());
-const object1 = pAequorFactory(1, [ 'A', 'C', 'T', 'C', 'A', 'A', 'C', 'A', 'T', 'G', 'C', 'G', 'C', 'A', 'T' ])
-console.log(object1.dna);
-console.log(object1.complementStrand());//checking if the method works
+    let mostRelatedSpecimens = mostRelatedInstances(instancesArray);
+    console.log(mostRelatedSpecimens);
+    
+//console.log(instancesArray)
+//console.log(instancesArray[1])
+//console.log(instancesArray[0].compareDNA(instancesArray[29]))
+//console.log(instancesArray[0].willLikelySurvive());
+//const object1 = pAequorFactory(1, [ 'A', 'C', 'T', 'C', 'A', 'A', 'C', 'A', 'T', 'G', 'C', 'G', 'C', 'A', 'T' ])
+//console.log(object1.dna);
+//console.log(object1.complementStrand());//checking if the method works
