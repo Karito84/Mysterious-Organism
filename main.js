@@ -52,7 +52,7 @@ const pAequorFactory = (specimenNum, dna) => {
       
         }
         let commonDna = ((count/15) * 100).toFixed(2);
-        return `Object1 and Object2 have ${commonDna}% DNA in common.`;
+        return `Specimen ${this.specimenNum} and specimen ${object2.specimenNum} have ${commonDna}% DNA in common.`;
     },
     willLikelySurvive() {
         let countCandGBases = 0;
@@ -101,9 +101,11 @@ const pAequorFactory = (specimenNum, dna) => {
                 number ++;
             }
         } 
-//console.log(obj1)
+
 console.log(instancesArray)
 console.log(instancesArray[1])
 console.log(instancesArray[0].compareDNA(instancesArray[29]))
 console.log(instancesArray[0].willLikelySurvive());
-
+const object1 = pAequorFactory(1, [ 'A', 'C', 'T', 'C', 'A', 'A', 'C', 'A', 'T', 'G', 'C', 'G', 'C', 'A', 'T' ])
+console.log(object1.dna);
+console.log(object1.complementStrand());//checking if the method works
